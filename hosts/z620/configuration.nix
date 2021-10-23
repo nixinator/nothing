@@ -27,8 +27,11 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # required for ZFS
+  networking.hostId = "093f03ec";
+
   # enable ntfs filesystem driver
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = [ "ntfs" "zfs" ];
 
   #boot.kernelPackages = unstable.linuxPackages_latest;
 

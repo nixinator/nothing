@@ -14,12 +14,22 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/df774a99-9c50-4e24-b8cc-49361a96e7fa";
-      fsType = "ext4";
+    { device = "rpool/root";
+      fsType = "zfs";
+    };
+
+  fileSystems."/nix" =
+    { device = "rpool/root/nix";
+      fsType = "zfs";
+    };
+
+  fileSystems."/home" =
+    { device = "rpool/root/home";
+      fsType = "zfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2B8B-6166";
+    { device = "/dev/disk/by-uuid/780E-39E8";
       fsType = "vfat";
     };
 
