@@ -35,7 +35,7 @@ in
 
   #boot.kernelPackages = unstable.linuxPackages_latest;
 
-  networking.hostName = "z620"; # Define your hostname.
+  networking.hostName = "z620-ssd-zfs"; # Define your hostname.
 
   networking.extraHosts =
   ''
@@ -169,20 +169,7 @@ in
     }
   ];
  
-  systemd.services.systemd-networkd-wait-online.enable = false;
-    networking = {
-      useNetworkd = true;
-  };
-
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
-  };
-
-  services.tailscale = {
-    enable = true;
-    package = inputs.self.inputs.nixos-unstable.outputs.legacyPackages.x86_64-linux.pkgs.tailscale;
-  };
+  
 
 }
 
