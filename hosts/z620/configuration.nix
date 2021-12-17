@@ -16,7 +16,7 @@ in
       #./hydra.nix
       "${inputs.self}/avahi.nix"
       "${inputs.self}/libvirt.nix"
-      "${inputs.self}/herc.nix"
+      #"${inputs.self}/herc.nix"
     ];
 
    #install flox
@@ -114,6 +114,8 @@ in
   # opengl support
    hardware.opengl.driSupport32Bit = true;
    hardware.opengl.enable = true;
+   #need this for parsec accleration to work
+   hardware.opengl.extraPackages = [ pkgs.vaapiVdpau ];
    hardware.steam-hardware.enable = true;
  
    programs.steam.enable = true;
