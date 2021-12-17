@@ -14,7 +14,7 @@
         system = "x86_64-linux";
         modules = [
           (import ./hosts/z620/configuration.nix)
-          herc.nixosModules.agent-service
+          #herc.nixosModules.agent-service
         ];
         specialArgs = { inherit inputs; };
       };
@@ -23,7 +23,7 @@
         system = "x86_64-linux";
         modules = [
           (import ./hosts/zbook/configuration.nix)
-          herc.nixosModules.agent-service
+          #herc.nixosModules.agent-service
         ];
         specialArgs = { inherit inputs; };
       };
