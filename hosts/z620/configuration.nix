@@ -16,6 +16,7 @@ in
       #./hydra.nix
       "${inputs.self}/avahi.nix"
       "${inputs.self}/libvirt.nix"
+      #"${inputs.self}/subs.nix"
       #"${inputs.self}/herc.nix"
     ];
 
@@ -186,5 +187,6 @@ in
     package = inputs.self.inputs.nixos-unstable.outputs.legacyPackages.x86_64-linux.pkgs.tailscale;
   };
 
+  nix.trustedUsers = [ "root" "l33" ];
 }
 
