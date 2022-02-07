@@ -16,6 +16,7 @@ in
       #./hydra.nix
       "${inputs.self}/avahi.nix"
       "${inputs.self}/libvirt.nix"
+      "${inputs.self}/sharedprograms.nix"
       #"${inputs.self}/subs.nix"
       #"${inputs.self}/herc.nix"
     ];
@@ -79,6 +80,7 @@ in
      element-web pciutils glxinfo
      steam starship
      vscodium
+     darktable
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -110,7 +112,8 @@ in
    services.xserver.layout = "gb";
    services.xserver.xkbOptions = "eurosign:e";
    #services.xserver.videoDrivers = [ "nvidiaLegacy390" ];
-   services.xserver.videoDrivers = [ "nvidia" ];
+   #services.xserver.videoDrivers = [ "nvidia" ];
+   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # opengl support
    hardware.opengl.driSupport32Bit = true;
@@ -156,6 +159,10 @@ in
     algorithm = "zstd";
   };
 
+  #lets try and get a selfie working
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.gutenprint ];
+  
   
   nix = {
     package = pkgs.nixFlakes;

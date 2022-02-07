@@ -2,7 +2,7 @@
   description = "A NixOS flake for Lee's personal computer.";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     herc.url = "github:hercules-ci/hercules-ci-agent";
   };
