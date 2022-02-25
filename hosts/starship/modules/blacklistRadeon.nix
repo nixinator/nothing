@@ -1,0 +1,3 @@
+{
+  boot.blacklistedKernelModules = [ "radeon" ];
+}

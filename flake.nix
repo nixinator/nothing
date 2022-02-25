@@ -9,6 +9,13 @@
 
   outputs = { self, nixpkgs, nixos-unstable, herc, ... }@inputs: {
     nixosConfigurations = {
+     starship = nixpkgs.lib.nixosSystem {
+       system = "x86_64-linux";
+       modules = [
+         (import ./hosts/starship/configuration.nix)
+       ];
+       specialArgs = { inherit inputs; };
+     };
 
      z620  = nixpkgs.lib.nixosSystem {   #this is the hostname = some func
         system = "x86_64-linux";
