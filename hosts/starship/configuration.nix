@@ -18,7 +18,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "starship";
+  networking = {
+    hostName = "starship";
+    networkmanager.enable = true; 
+  };
 
   nix = {
     package = pkgs.nixUnstable;
